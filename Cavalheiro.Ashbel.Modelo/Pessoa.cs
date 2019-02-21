@@ -47,5 +47,7 @@ namespace Cavalheiro.Ashbel.Model
         public int IdConjugue { get; set; }
 
         public int IdPai { get; set; }
+
+        public int IdStatusPessoa { get; set; }
     }
 }
