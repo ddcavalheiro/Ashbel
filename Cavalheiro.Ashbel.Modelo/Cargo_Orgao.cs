@@ -9,5 +9,13 @@ namespace Cavalheiro.Ashbel.Model
         public int IdCargo { get; set; }
 
         public int IdOrgao { get; set; }
+
+        #region Extras
+
+        public Cargo Cargo { get; set; }
+
+        public Orgao Orgao { get; set; }
+        #endregion
+
     }
 }

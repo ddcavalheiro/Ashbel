@@ -14,5 +14,14 @@ namespace Cavalheiro.Ashbel.Model
 
         public DateTime DataFimVigencia { get; set; }
 
+        #region Extras
+
+        public Pessoa Pessoa { get; set; }
+
+        public Pessoa Orgao { get; set; }
+
+        public Cargo_Orgao CargoOrgao { get; set; }
+        #endregion
+
     }
 }

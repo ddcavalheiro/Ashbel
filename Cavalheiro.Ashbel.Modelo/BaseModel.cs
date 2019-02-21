@@ -17,5 +17,10 @@ namespace Cavalheiro.Ashbel.Model
         public string UsuarioAlteracao { get; set; }
 
         public bool Ativo { get; set; }
+
+        #region Extras
+
+        #endregion
+
     }
 }

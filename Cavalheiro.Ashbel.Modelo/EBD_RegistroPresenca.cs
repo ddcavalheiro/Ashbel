@@ -15,5 +15,14 @@ namespace Cavalheiro.Ashbel.Model
         public bool Presente { get; set; }
 
         public bool Visita { get; set; }
+
+        #region Extras
+
+        public EBD_Aula Aula { get; set; }
+
+        public EBD_Aluno Aluno { get; set; }
+
+        #endregion
+
     }
 }

@@ -49,5 +49,15 @@ namespace Cavalheiro.Ashbel.Model
         public int IdPai { get; set; }
 
         public int IdStatusPessoa { get; set; }
+
+        #region Extras
+
+        public Pessoa Pai { get; set; }
+
+        public Pessoa Conjugue { get; set; }
+
+        public StatusPessoa Status { get; set; }
+        #endregion
+
     }
 }

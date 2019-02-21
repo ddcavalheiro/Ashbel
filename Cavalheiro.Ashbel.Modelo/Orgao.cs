@@ -9,5 +9,11 @@ namespace Cavalheiro.Ashbel.Model
         public string Nome { get; set; }
 
         public int IdTipoOrgao { get; set; }
+
+        #region Extras
+
+        public TipoOrgao TipoOrgao { get; set; }
+        #endregion
+
     }
 }
