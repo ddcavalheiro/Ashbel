@@ -1,5 +1,7 @@
 ﻿using Cavalheiro.Ashbel.Application.Interfaces;
 using Cavalheiro.Ashbel.Model;
+using Cavalheiro.Ashbel.Persistance.Interfaces;
+using Cavalheiro.Ashbel.Persistance.Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,9 +11,10 @@ namespace Cavalheiro.Ashbel.Application.Application
 {
     public class PessoaApp : IPessoaApp<PessoaModel>
     {
-        public Task Delete(string id)
+        IPessoaRepo _pessoaRepo;
+        public PessoaApp(IPessoaRepo pessoaRepo)
         {
-            throw new NotImplementedException();
+            _pessoaRepo = pessoaRepo;
         }
 
         public Task Delete(long id)
@@ -29,9 +32,9 @@ namespace Cavalheiro.Ashbel.Application.Application
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<PessoaModel>> List()
+        public async Task<List<PessoaModel>> List()
         {
-            throw new NotImplementedException();
+            return await _pessoaRepo.GetAll();
         }
 
         public Task<IEnumerable<PessoaModel>> List(PessoaModel model)

@@ -7,24 +7,11 @@ namespace Cavalheiro.Ashbel.Application.Interfaces
 {
     public interface IApplication<TModel> where TModel : class
     {
-
-        /// <summary>
-        /// Delete model by id
-        /// </summary>
-        /// <param name="id">Id of type string</param>
-        Task Delete(string id);
-
         /// <summary>
         /// Delete model by id
         /// </summary>
         /// <param name="id">Id of type long (for bigint IDs)</param>
         Task Delete(long id);
-
-        /// <summary>
-        /// Get model by id
-        /// </summary>
-        /// <param name="id">Id model</param>
-        Task<TModel> Get(string id);
 
         /// <summary>
         /// Get model by id

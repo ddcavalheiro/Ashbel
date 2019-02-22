@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cavalheiro.Ashbel.Modelo\Cavalheiro.Ashbel.Model.csproj" />
+    <ProjectReference Include="..\Cavalheiro.Ashbel.Persistance\Cavalheiro.Ashbel.Persistance.csproj" />
   </ItemGroup>
 
 </Project>
