@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cavalheiro.Ashbel.Model
 {
-    public class EBD_RegistroPresenca : BaseModel
+    public class EBD_RegistroPresencaModel : BaseModel
     {
         public int IdAula { get; set; }
 
@@ -18,9 +18,9 @@ namespace Cavalheiro.Ashbel.Model
 
         #region Extras
 
-        public EBD_Aula Aula { get; set; }
+        public EBD_AulaModel Aula { get; set; }
 
-        public EBD_Aluno Aluno { get; set; }
+        public EBD_AlunoModel Aluno { get; set; }
 
         #endregion
 

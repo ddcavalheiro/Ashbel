@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cavalheiro.Ashbel.Model
 {
-    public class StatusPessoa : BaseModel
+    public class StatusPessoaModel : BaseModel
     {
         public string Nome { get; set; }
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cavalheiro.Ashbel.Model
 {
-    public class Pessoa : BaseModel
+    public class PessoaModel : BaseModel
     {
         public string Nome { get; set; }
 
@@ -52,11 +52,11 @@ namespace Cavalheiro.Ashbel.Model
 
         #region Extras
 
-        public Pessoa Pai { get; set; }
+        public PessoaModel Pai { get; set; }
 
-        public Pessoa Conjugue { get; set; }
+        public PessoaModel Conjugue { get; set; }
 
-        public StatusPessoa Status { get; set; }
+        public StatusPessoaModel Status { get; set; }
         #endregion
 
     }

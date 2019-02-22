@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cavalheiro.Ashbel.Model
 {
-    public class Pessoa_Orgao : BaseModel
+    public class PessoaOrgaoModel : BaseModel
     {
         public int IdPessoa { get; set; }
 
@@ -16,11 +16,11 @@ namespace Cavalheiro.Ashbel.Model
 
         #region Extras
 
-        public Pessoa Pessoa { get; set; }
+        public PessoaModel Pessoa { get; set; }
 
-        public Pessoa Orgao { get; set; }
+        public PessoaModel Orgao { get; set; }
 
-        public Cargo_Orgao CargoOrgao { get; set; }
+        public CargoOrgaoModel CargoOrgao { get; set; }
         #endregion
 
     }
