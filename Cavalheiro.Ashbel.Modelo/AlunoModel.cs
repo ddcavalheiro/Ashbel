@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cavalheiro.Ashbel.Model
 {
-    public class EBD_AlunoModel : BaseModel
+    public class AlunoModel : BaseModel
     {
         public int IdPessoa { get; set; }
 
@@ -16,7 +16,7 @@ namespace Cavalheiro.Ashbel.Model
 
         public PessoaModel Pessoa { get; set; }
 
-        public EBD_TurmaModel Turma { get; set; }
+        public TurmaModel Turma { get; set; }
         #endregion
 
     }

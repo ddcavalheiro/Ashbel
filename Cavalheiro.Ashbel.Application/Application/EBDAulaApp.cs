@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cavalheiro.Ashbel.Application.Application
 {
-    public class EBDAulaApp : IEBDAulaApp<EBD_AulaModel>
+    public class EBDAulaApp : IEBDAulaApp<AulaModel>
     {
         public Task Delete(string id)
         {
@@ -19,32 +19,32 @@ namespace Cavalheiro.Ashbel.Application.Application
             throw new NotImplementedException();
         }
 
-        public Task<EBD_AulaModel> Get(string id)
+        public Task<AulaModel> Get(string id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<EBD_AulaModel> Get(long id)
+        public Task<AulaModel> Get(long id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<EBD_AulaModel>> List()
+        public Task<IEnumerable<AulaModel>> List()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<EBD_AulaModel>> List(EBD_AulaModel model)
+        public Task<IEnumerable<AulaModel>> List(AulaModel model)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<EBD_AulaModel>> ListBasic(EBD_AulaModel model)
+        public Task<IEnumerable<AulaModel>> ListBasic(AulaModel model)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<int>> Save(EBD_AulaModel model)
+        public Task<IEnumerable<int>> Save(AulaModel model)
         {
             throw new NotImplementedException();
         }

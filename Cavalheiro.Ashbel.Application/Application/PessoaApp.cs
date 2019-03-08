@@ -51,5 +51,10 @@ namespace Cavalheiro.Ashbel.Application.Application
         {
             throw new NotImplementedException();
         }
+
+        Task<IEnumerable<PessoaModel>> IApplication<PessoaModel>.List()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

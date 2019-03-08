@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cavalheiro.Ashbel.Application.Application
 {
-    public class EBDTurmaApp : IEBDTurmaApp<EBD_TurmaModel>
+    public class EBDTurmaApp : IEBDTurmaApp<TurmaModel>
     {
         public Task Delete(string id)
         {
@@ -19,32 +19,32 @@ namespace Cavalheiro.Ashbel.Application.Application
             throw new NotImplementedException();
         }
 
-        public Task<EBD_TurmaModel> Get(string id)
+        public Task<TurmaModel> Get(string id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<EBD_TurmaModel> Get(long id)
+        public Task<TurmaModel> Get(long id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<EBD_TurmaModel>> List()
+        public Task<IEnumerable<TurmaModel>> List()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<EBD_TurmaModel>> List(EBD_TurmaModel model)
+        public Task<IEnumerable<TurmaModel>> List(TurmaModel model)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<EBD_TurmaModel>> ListBasic(EBD_TurmaModel model)
+        public Task<IEnumerable<TurmaModel>> ListBasic(TurmaModel model)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<int>> Save(EBD_TurmaModel model)
+        public Task<IEnumerable<int>> Save(TurmaModel model)
         {
             throw new NotImplementedException();
         }

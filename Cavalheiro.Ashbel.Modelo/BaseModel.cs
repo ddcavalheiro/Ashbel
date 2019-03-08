@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace Cavalheiro.Ashbel.Model
 {
     public class BaseModel
@@ -12,7 +13,7 @@ namespace Cavalheiro.Ashbel.Model
 
         public string UsuarioCriacao { get; set; }
 
-        public DateTime DataAlteracao { get; set; }
+        public DateTime? DataAlteracao { get; set; }
 
         public string UsuarioAlteracao { get; set; }
 

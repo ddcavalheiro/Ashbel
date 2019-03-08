@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cavalheiro.Ashbel.Model
 {
-    public class EBD_Assunto : BaseModel
+    public class AssuntoModel : BaseModel
     {
         public string Titulo { get; set; }
 
@@ -14,7 +14,7 @@ namespace Cavalheiro.Ashbel.Model
 
         #region extras
 
-        public EBD_Tema Tema { get; set; }
+        public TemaModel Tema { get; set; }
         #endregion
     }
 }

@@ -5,13 +5,21 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cavalheiro.Ashbel.WebApi", "Cavalheiro.Ashbel.WebApi\Cavalheiro.Ashbel.WebApi.csproj", "{7EB7C19A-1A3B-4744-87B6-886938FE0E78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cavalheiro.Ashbel.Model", "Cavalheiro.Ashbel.Modelo\Cavalheiro.Ashbel.Model.csproj", "{64F115C4-CA7E-409A-974C-F2756EE98E91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cavalheiro.Ashbel.Model", "Cavalheiro.Ashbel.Modelo\Cavalheiro.Ashbel.Model.csproj", "{64F115C4-CA7E-409A-974C-F2756EE98E91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cavalheiro.Ashbel.Persistance", "Cavalheiro.Ashbel.Persistance\Cavalheiro.Ashbel.Persistance.csproj", "{09EEA19D-92DD-42A5-B0BB-C64B4B54726C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cavalheiro.Ashbel.Persistance", "Cavalheiro.Ashbel.Persistance\Cavalheiro.Ashbel.Persistance.csproj", "{09EEA19D-92DD-42A5-B0BB-C64B4B54726C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cavalheiro.Ashbel.Application", "Cavalheiro.Ashbel.Application\Cavalheiro.Ashbel.Application.csproj", "{85B5B708-984E-46F9-9EAF-999AEB01F21F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cavalheiro.Ashbel.Application", "Cavalheiro.Ashbel.Application\Cavalheiro.Ashbel.Application.csproj", "{85B5B708-984E-46F9-9EAF-999AEB01F21F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cavalheiro.Ashbel.WebApiTester", "Cavalheiro.Ashbel.WebApiTester\Cavalheiro.Ashbel.WebApiTester.csproj", "{90661908-2595-4DC9-9569-63E36E0B9890}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cavalheiro.Ashbel.WebApiTester", "Cavalheiro.Ashbel.WebApiTester\Cavalheiro.Ashbel.WebApiTester.csproj", "{90661908-2595-4DC9-9569-63E36E0B9890}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-webapi", "1-webapi", "{B873B702-60E8-4824-8608-F3483C52C078}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-application", "2-application", "{9A64A35A-E93A-4B71-99A8-D42FAF767AA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-model", "3-model", "{7B98A07B-0CB8-4A09-9F6E-335D5EAF0BF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-persistance", "4-persistance", "{8691041B-FC3A-495D-82FC-0F2C1FE91941}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +50,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7EB7C19A-1A3B-4744-87B6-886938FE0E78} = {B873B702-60E8-4824-8608-F3483C52C078}
+		{64F115C4-CA7E-409A-974C-F2756EE98E91} = {7B98A07B-0CB8-4A09-9F6E-335D5EAF0BF6}
+		{09EEA19D-92DD-42A5-B0BB-C64B4B54726C} = {8691041B-FC3A-495D-82FC-0F2C1FE91941}
+		{85B5B708-984E-46F9-9EAF-999AEB01F21F} = {9A64A35A-E93A-4B71-99A8-D42FAF767AA6}
+		{90661908-2595-4DC9-9569-63E36E0B9890} = {B873B702-60E8-4824-8608-F3483C52C078}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FFB0B3D0-5EDE-4197-968A-249DB8DC8060}

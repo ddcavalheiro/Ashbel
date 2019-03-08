@@ -8,55 +8,34 @@ namespace Cavalheiro.Ashbel.Model
     {
         public string Nome { get; set; }
 
-        public DateTime DataNascimento { get; set; }
-
-        public string TelefoneCelular { get; set; }
-
-        public string TelefoneFixo { get; set; }
-
-        public string Email { get; set; }
-
-        public string Profissao { get; set; }
-
-        public string Empresa { get; set; }
-
-        public string Cidade { get; set; }
-
-        public string Bairro { get; set; }
-
-        public string Rua { get; set; }
-
-        public string Numero { get; set; }
-
-        public string Complemento { get; set; }
-
-        public Byte[] Foto { get; set; }
-
-        public string NaturalCidade { get; set; }
-
-        public string NaturalEstado { get; set; }
-
-        public string NaturalPais { get; set; }
-
-        public bool MembroProfesso { get; set; }
-
-        public bool Batizado { get; set; }
-
         public bool Membro { get; set; }
-
-        public int IdConjugue { get; set; }
-
-        public int IdPai { get; set; }
 
         public int IdStatusPessoa { get; set; }
 
+        public int? IdPessoaInfoAdicional { get; set; }
+
+        public int? IdAluno { get; set; }
+
+        //public int IdPessoaPai { get; set; }
+
+        //public int IdPessoaConjugue { get; set; }
+
         #region Extras
 
-        public PessoaModel Pai { get; set; }
+        public AlunoModel Aluno { get; set; }
 
-        public PessoaModel Conjugue { get; set; }
+        public List<PessoaContatoModel> Contatos { get; set; }
 
-        public StatusPessoaModel Status { get; set; }
+        //public List<PessoaEnderecoModel> Enderecos { get; set; }
+
+        public PessoaInfoAdicionalModel InfoAdicional { get; set; }
+
+        //public StatusPessoaModel Status { get; set; }
+
+        //public PessoaModel Pai { get; set; }
+
+        //public PessoaModel Conjugue { get; set; }
+
         #endregion
 
     }
