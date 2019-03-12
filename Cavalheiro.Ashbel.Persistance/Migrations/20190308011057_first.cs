@@ -113,7 +113,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TipoOrgao",
+                name: "TipoGrupoTrabalho",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -128,7 +128,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TipoOrgao", x => x.Id);
+                    table.PrimaryKey("PK_TipoGrupoTrabalho", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -220,7 +220,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Orgao",
+                name: "GrupoTrabalho",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -231,16 +231,16 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                     UsuarioAlteracao = table.Column<string>(nullable: true),
                     Ativo = table.Column<bool>(nullable: false),
                     Nome = table.Column<string>(nullable: true),
-                    IdTipoOrgao = table.Column<int>(nullable: false),
-                    TipoOrgaoId = table.Column<int>(nullable: true)
+                    IdTipoGrupoTrabalho = table.Column<int>(nullable: false),
+                    TipoGrupoTrabalhoId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Orgao", x => x.Id);
+                    table.PrimaryKey("PK_GrupoTrabalho", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Orgao_TipoOrgao_TipoOrgaoId",
-                        column: x => x.TipoOrgaoId,
-                        principalTable: "TipoOrgao",
+                        name: "FK_GrupoTrabalho_TipoGrupoTrabalho_TipoGrupoTrabalhoId",
+                        column: x => x.TipoGrupoTrabalhoId,
+                        principalTable: "TipoGrupoTrabalho",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -340,7 +340,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CargoOrgao",
+                name: "CargoGrupoTrabalho",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -351,23 +351,23 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                     UsuarioAlteracao = table.Column<string>(nullable: true),
                     Ativo = table.Column<bool>(nullable: false),
                     IdCargo = table.Column<int>(nullable: false),
-                    IdOrgao = table.Column<int>(nullable: false),
+                    IdGrupoTrabalho = table.Column<int>(nullable: false),
                     CargoId = table.Column<int>(nullable: true),
-                    OrgaoId = table.Column<int>(nullable: true)
+                    GrupoTrabalhoId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CargoOrgao", x => x.Id);
+                    table.PrimaryKey("PK_CargoGrupoTrabalho", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CargoOrgao_Cargo_CargoId",
+                        name: "FK_CargoGrupoTrabalho_Cargo_CargoId",
                         column: x => x.CargoId,
                         principalTable: "Cargo",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CargoOrgao_Orgao_OrgaoId",
-                        column: x => x.OrgaoId,
-                        principalTable: "Orgao",
+                        name: "FK_CargoGrupoTrabalho_GrupoTrabalho_GrupoTrabalhoId",
+                        column: x => x.GrupoTrabalhoId,
+                        principalTable: "GrupoTrabalho",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -409,7 +409,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PessoaOrgao",
+                name: "PessoaGrupoTrabalho",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -420,30 +420,30 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                     UsuarioAlteracao = table.Column<string>(nullable: true),
                     Ativo = table.Column<bool>(nullable: false),
                     IdPessoa = table.Column<int>(nullable: false),
-                    IdOrgao = table.Column<int>(nullable: false),
-                    IdCargo_Orgao = table.Column<int>(nullable: false),
+                    IdGrupoTrabalho = table.Column<int>(nullable: false),
+                    IdCargo_GrupoTrabalho = table.Column<int>(nullable: false),
                     DataFimVigencia = table.Column<DateTime>(nullable: false),
                     PessoaId = table.Column<int>(nullable: true),
-                    OrgaoId = table.Column<int>(nullable: true),
-                    CargoOrgaoId = table.Column<int>(nullable: true)
+                    GrupoTrabalhoId = table.Column<int>(nullable: true),
+                    CargoGrupoTrabalhoId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PessoaOrgao", x => x.Id);
+                    table.PrimaryKey("PK_PessoaGrupoTrabalho", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_PessoaOrgao_CargoOrgao_CargoOrgaoId",
-                        column: x => x.CargoOrgaoId,
-                        principalTable: "CargoOrgao",
+                        name: "FK_PessoaGrupoTrabalho_CargoGrupoTrabalho_CargoGrupoTrabalhoId",
+                        column: x => x.CargoGrupoTrabalhoId,
+                        principalTable: "CargoGrupoTrabalho",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_PessoaOrgao_Pessoa_OrgaoId",
-                        column: x => x.OrgaoId,
+                        name: "FK_PessoaGrupoTrabalho_Pessoa_GrupoTrabalhoId",
+                        column: x => x.GrupoTrabalhoId,
                         principalTable: "Pessoa",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_PessoaOrgao_Pessoa_PessoaId",
+                        name: "FK_PessoaGrupoTrabalho_Pessoa_PessoaId",
                         column: x => x.PessoaId,
                         principalTable: "Pessoa",
                         principalColumn: "Id",
@@ -466,19 +466,19 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                 column: "TemaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CargoOrgao_CargoId",
-                table: "CargoOrgao",
+                name: "IX_CargoGrupoTrabalho_CargoId",
+                table: "CargoGrupoTrabalho",
                 column: "CargoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CargoOrgao_OrgaoId",
-                table: "CargoOrgao",
-                column: "OrgaoId");
+                name: "IX_CargoGrupoTrabalho_GrupoTrabalhoId",
+                table: "CargoGrupoTrabalho",
+                column: "GrupoTrabalhoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orgao_TipoOrgaoId",
-                table: "Orgao",
-                column: "TipoOrgaoId");
+                name: "IX_GrupoTrabalho_TipoGrupoTrabalhoId",
+                table: "GrupoTrabalho",
+                column: "TipoGrupoTrabalhoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pessoa_ConjugueId",
@@ -508,18 +508,18 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                 column: "PessoaModelId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PessoaOrgao_CargoOrgaoId",
-                table: "PessoaOrgao",
-                column: "CargoOrgaoId");
+                name: "IX_PessoaGrupoTrabalho_CargoGrupoTrabalhoId",
+                table: "PessoaGrupoTrabalho",
+                column: "CargoGrupoTrabalhoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PessoaOrgao_OrgaoId",
-                table: "PessoaOrgao",
-                column: "OrgaoId");
+                name: "IX_PessoaGrupoTrabalho_GrupoTrabalhoId",
+                table: "PessoaGrupoTrabalho",
+                column: "GrupoTrabalhoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PessoaOrgao_PessoaId",
-                table: "PessoaOrgao",
+                name: "IX_PessoaGrupoTrabalho_PessoaId",
+                table: "PessoaGrupoTrabalho",
                 column: "PessoaId");
 
             migrationBuilder.CreateIndex(
@@ -545,7 +545,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                 name: "PessoaEndereco");
 
             migrationBuilder.DropTable(
-                name: "PessoaOrgao");
+                name: "PessoaGrupoTrabalho");
 
             migrationBuilder.DropTable(
                 name: "RegistroPresenca");
@@ -554,7 +554,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                 name: "Tema");
 
             migrationBuilder.DropTable(
-                name: "CargoOrgao");
+                name: "CargoGrupoTrabalho");
 
             migrationBuilder.DropTable(
                 name: "Aluno");
@@ -566,7 +566,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                 name: "Cargo");
 
             migrationBuilder.DropTable(
-                name: "Orgao");
+                name: "GrupoTrabalho");
 
             migrationBuilder.DropTable(
                 name: "Pessoa");
@@ -575,7 +575,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                 name: "Turma");
 
             migrationBuilder.DropTable(
-                name: "TipoOrgao");
+                name: "TipoGrupoTrabalho");
 
             migrationBuilder.DropTable(
                 name: "PessoaInfoAdicional");

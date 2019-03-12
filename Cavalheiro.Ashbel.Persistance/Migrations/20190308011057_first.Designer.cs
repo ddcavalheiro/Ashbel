@@ -137,7 +137,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                     b.ToTable("Cargo");
                 });
 
-            modelBuilder.Entity("Cavalheiro.Ashbel.Model.CargoOrgaoModel", b =>
+            modelBuilder.Entity("Cavalheiro.Ashbel.Model.CargoGrupoTrabalhoModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -153,9 +153,9 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
 
                     b.Property<int>("IdCargo");
 
-                    b.Property<int>("IdOrgao");
+                    b.Property<int>("IdGrupoTrabalho");
 
-                    b.Property<int?>("OrgaoId");
+                    b.Property<int?>("GrupoTrabalhoId");
 
                     b.Property<string>("UsuarioAlteracao");
 
@@ -165,12 +165,12 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
 
                     b.HasIndex("CargoId");
 
-                    b.HasIndex("OrgaoId");
+                    b.HasIndex("GrupoTrabalhoId");
 
-                    b.ToTable("CargoOrgao");
+                    b.ToTable("CargoGrupoTrabalho");
                 });
 
-            modelBuilder.Entity("Cavalheiro.Ashbel.Model.OrgaoModel", b =>
+            modelBuilder.Entity("Cavalheiro.Ashbel.Model.GrupoTrabalhoModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -182,11 +182,11 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
 
                     b.Property<DateTime>("DataCriacao");
 
-                    b.Property<int>("IdTipoOrgao");
+                    b.Property<int>("IdTipoGrupoTrabalho");
 
                     b.Property<string>("Nome");
 
-                    b.Property<int?>("TipoOrgaoId");
+                    b.Property<int?>("TipoGrupoTrabalhoId");
 
                     b.Property<string>("UsuarioAlteracao");
 
@@ -194,9 +194,9 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TipoOrgaoId");
+                    b.HasIndex("TipoGrupoTrabalhoId");
 
-                    b.ToTable("Orgao");
+                    b.ToTable("GrupoTrabalho");
                 });
 
             modelBuilder.Entity("Cavalheiro.Ashbel.Model.PessoaContatoModel", b =>
@@ -359,7 +359,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                     b.ToTable("Pessoa");
                 });
 
-            modelBuilder.Entity("Cavalheiro.Ashbel.Model.PessoaOrgaoModel", b =>
+            modelBuilder.Entity("Cavalheiro.Ashbel.Model.PessoaGrupoTrabalhoModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -367,7 +367,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
 
                     b.Property<bool>("Ativo");
 
-                    b.Property<int?>("CargoOrgaoId");
+                    b.Property<int?>("CargoGrupoTrabalhoId");
 
                     b.Property<DateTime?>("DataAlteracao");
 
@@ -375,13 +375,13 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
 
                     b.Property<DateTime>("DataFimVigencia");
 
-                    b.Property<int>("IdCargo_Orgao");
+                    b.Property<int>("IdCargo_GrupoTrabalho");
 
-                    b.Property<int>("IdOrgao");
+                    b.Property<int>("IdGrupoTrabalho");
 
                     b.Property<int>("IdPessoa");
 
-                    b.Property<int?>("OrgaoId");
+                    b.Property<int?>("GrupoTrabalhoId");
 
                     b.Property<int?>("PessoaId");
 
@@ -391,13 +391,13 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CargoOrgaoId");
+                    b.HasIndex("CargoGrupoTrabalhoId");
 
-                    b.HasIndex("OrgaoId");
+                    b.HasIndex("GrupoTrabalhoId");
 
                     b.HasIndex("PessoaId");
 
-                    b.ToTable("PessoaOrgao");
+                    b.ToTable("PessoaGrupoTrabalho");
                 });
 
             modelBuilder.Entity("Cavalheiro.Ashbel.Model.RegistroPresencaModel", b =>
@@ -487,7 +487,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                     b.ToTable("Tema");
                 });
 
-            modelBuilder.Entity("Cavalheiro.Ashbel.Model.TipoOrgaoModel", b =>
+            modelBuilder.Entity("Cavalheiro.Ashbel.Model.TipoGrupoTrabalhoModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -509,7 +509,7 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TipoOrgao");
+                    b.ToTable("TipoGrupoTrabalho");
                 });
 
             modelBuilder.Entity("Cavalheiro.Ashbel.Model.TurmaModel", b =>
@@ -557,22 +557,22 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                         .HasForeignKey("TemaId");
                 });
 
-            modelBuilder.Entity("Cavalheiro.Ashbel.Model.CargoOrgaoModel", b =>
+            modelBuilder.Entity("Cavalheiro.Ashbel.Model.CargoGrupoTrabalhoModel", b =>
                 {
                     b.HasOne("Cavalheiro.Ashbel.Model.CargoModel", "Cargo")
                         .WithMany()
                         .HasForeignKey("CargoId");
 
-                    b.HasOne("Cavalheiro.Ashbel.Model.OrgaoModel", "Orgao")
+                    b.HasOne("Cavalheiro.Ashbel.Model.GrupoTrabalhoModel", "GrupoTrabalho")
                         .WithMany()
-                        .HasForeignKey("OrgaoId");
+                        .HasForeignKey("GrupoTrabalhoId");
                 });
 
-            modelBuilder.Entity("Cavalheiro.Ashbel.Model.OrgaoModel", b =>
+            modelBuilder.Entity("Cavalheiro.Ashbel.Model.GrupoTrabalhoModel", b =>
                 {
-                    b.HasOne("Cavalheiro.Ashbel.Model.TipoOrgaoModel", "TipoOrgao")
+                    b.HasOne("Cavalheiro.Ashbel.Model.TipoGrupoTrabalhoModel", "TipoGrupoTrabalho")
                         .WithMany()
-                        .HasForeignKey("TipoOrgaoId");
+                        .HasForeignKey("TipoGrupoTrabalhoId");
                 });
 
             modelBuilder.Entity("Cavalheiro.Ashbel.Model.PessoaContatoModel", b =>
@@ -604,15 +604,15 @@ namespace Cavalheiro.Ashbel.Persistance.Migrations
                         .HasForeignKey("StatusId");
                 });
 
-            modelBuilder.Entity("Cavalheiro.Ashbel.Model.PessoaOrgaoModel", b =>
+            modelBuilder.Entity("Cavalheiro.Ashbel.Model.PessoaGrupoTrabalhoModel", b =>
                 {
-                    b.HasOne("Cavalheiro.Ashbel.Model.CargoOrgaoModel", "CargoOrgao")
+                    b.HasOne("Cavalheiro.Ashbel.Model.CargoGrupoTrabalhoModel", "CargoGrupoTrabalho")
                         .WithMany()
-                        .HasForeignKey("CargoOrgaoId");
+                        .HasForeignKey("CargoGrupoTrabalhoId");
 
-                    b.HasOne("Cavalheiro.Ashbel.Model.PessoaModel", "Orgao")
+                    b.HasOne("Cavalheiro.Ashbel.Model.PessoaModel", "GrupoTrabalho")
                         .WithMany()
-                        .HasForeignKey("OrgaoId");
+                        .HasForeignKey("GrupoTrabalhoId");
 
                     b.HasOne("Cavalheiro.Ashbel.Model.PessoaModel", "Pessoa")
                         .WithMany()

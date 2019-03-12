@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Cavalheiro.Ashbel.Application.Interfaces
 {
-    public interface IPessoaOrgaoApp<TModel> : IApplication<TModel> where TModel : class
+    public interface IPessoaGrupoTrabalhoApp<TModel> : IApplication<TModel> where TModel : class
     {
     }
 }

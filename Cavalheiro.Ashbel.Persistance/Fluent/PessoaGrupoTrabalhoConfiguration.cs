@@ -7,11 +7,11 @@ using System.Text;
 
 namespace Cavalheiro.Ashbel.Persistance.Fluent
 {
-    public class PessoaOrgaoConfiguration : IEntityTypeConfiguration<PessoaOrgaoModel>
+    public class PessoaGrupoTrabalhoConfiguration : IEntityTypeConfiguration<PessoaGrupoTrabalhoModel>
     {
-        public void Configure(EntityTypeBuilder<PessoaOrgaoModel> builder)
+        public void Configure(EntityTypeBuilder<PessoaGrupoTrabalhoModel> builder)
         {
-            builder.ToTable("PessoaOrgao").HasKey(o => o.Id).HasName("Id");
+            builder.ToTable("PessoaGrupoTrabalho").HasKey(o => o.Id).HasName("Id");
             builder.Property(p => p.Id).HasColumnName("Id").ValueGeneratedOnAdd().IsRequired();
             builder.Property(t => t.DataCriacao).IsRequired().HasColumnName("DataCriacao");
             builder.Property(t => t.UsuarioCriacao).IsRequired().HasColumnName("UsuarioCriacao");
@@ -19,8 +19,8 @@ namespace Cavalheiro.Ashbel.Persistance.Fluent
             builder.Property(t => t.UsuarioAlteracao).HasColumnName("UsuarioAlteracao");
 
             builder.Property(t => t.IdPessoa).IsRequired().HasColumnName("IdPessoa");
-            builder.Property(t => t.IdOrgao).IsRequired().HasColumnName("IdOrgao");
-            builder.Property(t => t.IdCargo_Orgao).IsRequired().HasColumnName("IdCargo_Orgao");
+            builder.Property(t => t.IdGrupoTrabalho).IsRequired().HasColumnName("IdGrupoTrabalho");
+            builder.Property(t => t.IdCargo_GrupoTrabalho).IsRequired().HasColumnName("IdCargo_GrupoTrabalho");
             builder.Property(t => t.DataFimVigencia).IsRequired().HasColumnName("DataFimVigencia");
         }
     }

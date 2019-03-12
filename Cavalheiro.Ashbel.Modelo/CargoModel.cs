@@ -9,7 +9,7 @@ namespace Cavalheiro.Ashbel.Model
         public string Nome { get; set; }
 
         #region Extras
-        public List<CargoOrgaoModel> CargoOrgaos { get; set; }
+        public List<CargoGrupoTrabalhoModel> CargoGrupoTrabalhos { get; set; }
         #endregion
     }
 }

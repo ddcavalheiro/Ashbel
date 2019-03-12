@@ -15,22 +15,22 @@ namespace Cavalheiro.Ashbel.Persistance
         public DbSet<AulaModel> Aula { get; set; }
 
         public DbSet<CargoModel> Cargo { get; set; }
-        public DbSet<CargoOrgaoModel> CargoOrgao { get; set; }
+        public DbSet<CargoGrupoTrabalhoModel> CargoGrupoTrabalho { get; set; }
 
-        public DbSet<OrgaoModel> Orgao { get; set; }
+        public DbSet<GrupoTrabalhoModel> GrupoTrabalho { get; set; }
 
         public DbSet<PessoaModel> Pessoa { get; set; }
         public DbSet<PessoaContatoModel> PessoaContato { get; set; }
         public DbSet<PessoaEnderecoModel> PessoaEndereco { get; set; }
         public DbSet<PessoaInfoAdicionalModel> PessoaInfoAdicional { get; set; }
-        public DbSet<PessoaOrgaoModel> PessoaOrgao { get; set; }
+        public DbSet<PessoaGrupoTrabalhoModel> PessoaGrupoTrabalho { get; set; }
 
         public DbSet<RegistroPresencaModel> RegistroPresenca { get; set; }
 
         public DbSet<StatusPessoaModel> StatusPessoa { get; set; }
 
         public DbSet<TemaModel> Tema { get; set; }
-        public DbSet<TipoOrgaoModel> TipoOrgao { get; set; }
+        public DbSet<TipoGrupoTrabalhoModel> TipoGrupoTrabalho { get; set; }
 
         public DbSet<TurmaModel> Turma { get; set; }
 

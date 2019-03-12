@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cavalheiro.Ashbel.Application.Application
 {
-    public class TipoOrgaoApp : ITipoOrgaoApp<TipoOrgaoModel>
+    public class TipoGrupoTrabalhoApp : ITipoGrupoTrabalhoApp<TipoGrupoTrabalhoModel>
     {
         public Task Delete(string id)
         {
@@ -19,32 +19,32 @@ namespace Cavalheiro.Ashbel.Application.Application
             throw new NotImplementedException();
         }
 
-        public Task<TipoOrgaoModel> Get(string id)
+        public Task<TipoGrupoTrabalhoModel> Get(string id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<TipoOrgaoModel> Get(long id)
+        public Task<TipoGrupoTrabalhoModel> Get(long id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<TipoOrgaoModel>> List()
+        public Task<IEnumerable<TipoGrupoTrabalhoModel>> List()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<TipoOrgaoModel>> List(TipoOrgaoModel model)
+        public Task<IEnumerable<TipoGrupoTrabalhoModel>> List(TipoGrupoTrabalhoModel model)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<TipoOrgaoModel>> ListBasic(TipoOrgaoModel model)
+        public Task<IEnumerable<TipoGrupoTrabalhoModel>> ListBasic(TipoGrupoTrabalhoModel model)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<int>> Save(TipoOrgaoModel model)
+        public Task<IEnumerable<int>> Save(TipoGrupoTrabalhoModel model)
         {
             throw new NotImplementedException();
         }

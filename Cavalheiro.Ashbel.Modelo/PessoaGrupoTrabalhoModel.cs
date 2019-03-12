@@ -4,13 +4,13 @@ using System.Text;
 
 namespace Cavalheiro.Ashbel.Model
 {
-    public class PessoaOrgaoModel : BaseModel
+    public class PessoaGrupoTrabalhoModel : BaseModel
     {
         public int IdPessoa { get; set; }
 
-        public int IdOrgao { get; set; }
+        public int IdGrupoTrabalho { get; set; }
 
-        public int IdCargo_Orgao { get; set; }
+        public int IdCargo_GrupoTrabalho { get; set; }
 
         public DateTime DataFimVigencia { get; set; }
 
@@ -18,9 +18,9 @@ namespace Cavalheiro.Ashbel.Model
 
         public PessoaModel Pessoa { get; set; }
 
-        public PessoaModel Orgao { get; set; }
+        public PessoaModel GrupoTrabalho { get; set; }
 
-        public CargoOrgaoModel CargoOrgao { get; set; }
+        public CargoGrupoTrabalhoModel CargoGrupoTrabalho { get; set; }
         #endregion
 
     }

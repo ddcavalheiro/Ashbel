@@ -7,11 +7,11 @@ using System.Text;
 
 namespace Cavalheiro.Ashbel.Persistance.Fluent
 {
-    public class TipoOrgaoConfiguration : IEntityTypeConfiguration<TipoOrgaoModel>
+    public class GrupoTrabalhoConfiguration : IEntityTypeConfiguration<GrupoTrabalhoModel>
     {
-        public void Configure(EntityTypeBuilder<TipoOrgaoModel> builder)
+        public void Configure(EntityTypeBuilder<GrupoTrabalhoModel> builder)
         {
-            builder.ToTable("TipoOrgao").HasKey(o => o.Id).HasName("Id");
+            builder.ToTable("GrupoTrabalho").HasKey(o => o.Id).HasName("Id");
             builder.Property(p => p.Id).HasColumnName("Id").ValueGeneratedOnAdd().IsRequired();
             builder.Property(t => t.DataCriacao).IsRequired().HasColumnName("DataCriacao");
             builder.Property(t => t.UsuarioCriacao).IsRequired().HasColumnName("UsuarioCriacao");
@@ -19,7 +19,7 @@ namespace Cavalheiro.Ashbel.Persistance.Fluent
             builder.Property(t => t.UsuarioAlteracao).HasColumnName("UsuarioAlteracao");
 
             builder.Property(t => t.Nome).IsRequired().HasColumnName("Nome").HasMaxLength(50);
-            builder.Property(t => t.VigenciaAnos).HasColumnName("VigenciaAnos").HasColumnType("int");
+            builder.Property(t => t.IdTipoGrupoTrabalho).IsRequired().HasColumnName("IdTipoGrupoTrabalho");
         }
     }
 }
