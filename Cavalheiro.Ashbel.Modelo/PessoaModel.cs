@@ -16,9 +16,9 @@ namespace Cavalheiro.Ashbel.Model
 
         public int? IdAluno { get; set; }
 
-        //public int IdPessoaPai { get; set; }
+        public int? IdPessoaPai { get; set; }
 
-        //public int IdPessoaConjugue { get; set; }
+        public int? IdPessoaConjugue { get; set; }
 
         #region Extras
 
@@ -26,15 +26,15 @@ namespace Cavalheiro.Ashbel.Model
 
         public List<PessoaContatoModel> Contatos { get; set; }
 
-        //public List<PessoaEnderecoModel> Enderecos { get; set; }
+        public List<PessoaEnderecoModel> Enderecos { get; set; }
 
         public PessoaInfoAdicionalModel InfoAdicional { get; set; }
 
-        //public StatusPessoaModel Status { get; set; }
+        public StatusPessoaModel Status { get; set; }
 
-        //public PessoaModel Pai { get; set; }
+        public PessoaModel Pai { get; set; }
 
-        //public PessoaModel Conjugue { get; set; }
+        public PessoaModel Conjugue { get; set; }
 
         #endregion
 

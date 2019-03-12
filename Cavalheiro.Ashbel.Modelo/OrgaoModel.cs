@@ -13,6 +13,8 @@ namespace Cavalheiro.Ashbel.Model
         #region Extras
 
         public TipoOrgaoModel TipoOrgao { get; set; }
+
+        public List<CargoOrgaoModel> OrgaoCargos { get; set; }
         #endregion
 
     }

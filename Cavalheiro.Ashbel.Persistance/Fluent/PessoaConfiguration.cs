@@ -17,13 +17,34 @@ namespace Cavalheiro.Ashbel.Persistance.Fluent
             builder.Property(t => t.UsuarioCriacao).IsRequired().HasColumnName("UsuarioCriacao");
             builder.Property(t => t.DataAlteracao).HasColumnName("DataAlteracao");
             builder.Property(t => t.UsuarioAlteracao).HasColumnName("UsuarioAlteracao");
-            builder.Property(t => t.IdStatusPessoa).IsRequired().HasDefaultValue(0).HasColumnName("IdStatusPessoa");
+
             builder.Property(t => t.Nome).IsRequired().HasMaxLength(250).HasColumnName("Nome");
             builder.Property(t => t.Membro).IsRequired().HasDefaultValue(true).HasColumnName("Membro");
 
-            builder.HasOne<PessoaInfoAdicionalModel>(s => s.InfoAdicional)
-                    .WithOne(ad => ad.Pessoa)
-                    .HasForeignKey<PessoaInfoAdicionalModel>(ad => ad.IdPessoa);
+            builder.Property(t => t.IdStatusPessoa).IsRequired().HasDefaultValue(0).HasColumnName("IdStatusPessoa");
+            builder.Property(t => t.IdPessoaPai).IsRequired().HasColumnName("IdPessoaPai");
+            builder.Property(t => t.IdPessoaConjugue).IsRequired().HasColumnName("IdPessoaConjugue");
+
+            builder.HasOne(s => s.InfoAdicional)
+                .WithOne(ad => ad.Pessoa)
+                .HasForeignKey<PessoaModel>(p=> p.IdPessoaInfoAdicional)
+                .HasConstraintName("FK_Pessoa_InfoAdicional");
+
+            builder.HasOne(s => s.Pai)
+                .WithOne()
+                .HasForeignKey<PessoaModel>(p => p.IdPessoaPai)
+                .HasConstraintName("FK_Pessoa_PessoaPai");
+
+            builder.HasOne(s => s.Conjugue)
+                .WithOne()
+                .HasForeignKey<PessoaModel>(p => p.IdPessoaConjugue)
+                .HasConstraintName("FK_Pessoa_PessoaConjugue");
+
+            builder.HasOne(c => c.Status)
+                .WithMany()
+                .HasForeignKey(s => s.IdStatusPessoa)
+                .HasConstraintName("FK_Pessoa_StatusPessoa");
+
 
         }
     }

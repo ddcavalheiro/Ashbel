@@ -11,6 +11,7 @@ namespace Cavalheiro.Ashbel.Persistance.Fluent
     {
         public void Configure(EntityTypeBuilder<AlunoModel> builder)
         {
+            //base class properties
             builder.ToTable("Aluno").HasKey(o => o.Id).HasName("Id");
             builder.Property(p => p.Id).HasColumnName("Id").ValueGeneratedOnAdd().IsRequired();
             builder.Property(t => t.DataCriacao).IsRequired().HasColumnName("DataCriacao");
@@ -18,13 +19,24 @@ namespace Cavalheiro.Ashbel.Persistance.Fluent
             builder.Property(t => t.DataAlteracao).HasColumnName("DataAlteracao");
             builder.Property(t => t.UsuarioAlteracao).HasColumnName("UsuarioAlteracao");
 
-            builder.Property(t => t.IdPessoa).IsRequired().HasDefaultValue(0).HasColumnName("IdPessoa");
-            builder.Property(t => t.IdTurma).IsRequired().HasMaxLength(250).HasColumnName("IdTurma");
+            //class properties
             builder.Property(t => t.Matriculado).IsRequired().HasDefaultValue(true).HasColumnName("Matriculado");
 
-            builder.HasOne<PessoaModel>(s => s.Pessoa)
+            //relation properties
+            builder.Property(t => t.IdPessoa).IsRequired().HasDefaultValue(0).HasColumnName("IdPessoa");
+            builder.Property(t => t.IdTurma).IsRequired().HasMaxLength(250).HasColumnName("IdTurma");
+
+            //Relations
+
+            builder.HasOne(s => s.Pessoa)
                     .WithOne(ad => ad.Aluno)
-                    .HasForeignKey<PessoaModel>(ad => ad.IdAluno);
+                    .HasConstraintName("FK_Aluno_Pessoa");
+
+            builder.HasOne(s => s.Turma)
+                    .WithMany(ad => ad.Alunos)
+                    .HasForeignKey(ad => ad.IdTurma)
+                    .HasConstraintName("FK_Turma_Alunos");
+
         }
     }
 }

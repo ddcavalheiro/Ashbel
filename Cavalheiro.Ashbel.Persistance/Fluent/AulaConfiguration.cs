@@ -7,26 +7,20 @@ using System.Text;
 
 namespace Cavalheiro.Ashbel.Persistance.Fluent
 {
-    public class AssuntoConfiguration : IEntityTypeConfiguration<AssuntoModel>
+    public class AulaConfiguration : IEntityTypeConfiguration<AulaModel>
     {
-        public void Configure(EntityTypeBuilder<AssuntoModel> builder)
+        public void Configure(EntityTypeBuilder<AulaModel> builder)
         {
-            builder.ToTable("Assunto").HasKey(o => o.Id).HasName("Id");
+            builder.ToTable("Aula").HasKey(o => o.Id).HasName("Id");
             builder.Property(p => p.Id).HasColumnName("Id").ValueGeneratedOnAdd().IsRequired();
             builder.Property(t => t.DataCriacao).IsRequired().HasColumnName("DataCriacao");
             builder.Property(t => t.UsuarioCriacao).IsRequired().HasColumnName("UsuarioCriacao");
             builder.Property(t => t.DataAlteracao).HasColumnName("DataAlteracao");
             builder.Property(t => t.UsuarioAlteracao).HasColumnName("UsuarioAlteracao");
 
-            builder.Property(t => t.Titulo).IsRequired().HasMaxLength(50).HasColumnName("Titulo");
-            builder.Property(t => t.Descricao).IsRequired().HasMaxLength(250).HasColumnName("Descricao");
-            builder.Property(t => t.IdTema).IsRequired().HasColumnName("IdTema");
-
-            builder.HasOne(t => t.Tema)
-                .WithMany(a => a.Assuntos)
-                .HasForeignKey(f => f.IdTema)
-                .HasConstraintName("FK_Tema_Assuntos");
-
+            builder.Property(t => t.Ano).IsRequired().HasColumnName("Ano").HasColumnType("int");
+            builder.Property(t => t.Mes).IsRequired().HasColumnName("Mes").HasColumnType("int");
+            builder.Property(t => t.Dia).IsRequired().HasColumnName("Dia").HasColumnType("int");
         }
     }
 }

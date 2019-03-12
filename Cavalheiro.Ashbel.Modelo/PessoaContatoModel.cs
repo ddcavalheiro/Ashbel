@@ -12,7 +12,10 @@ namespace Cavalheiro.Ashbel.Model
 
         public string TelefoneFixo { get; set; }
 
-        public string Email { get; set; }
+        public string EmailPrincipal { get; set; }
 
+        public string EmailSecundario { get; set; }
+
+        public PessoaModel Pessoa { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace Cavalheiro.Ashbel.Model
     {
         public int IdPessoa { get; set; }
 
-        public string Endereco { get; set; }
+        public string Logradouro { get; set; }
 
         public string Numero { get; set; }
 
@@ -21,5 +21,7 @@ namespace Cavalheiro.Ashbel.Model
         public string Cidade { get; set; }
 
         public string Estado { get; set; }
+
+        public PessoaModel Pessoa { get; set; }
     }
 }
