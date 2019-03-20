@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Cavalheiro.Ashbel.Application.Interfaces
 {
-    public interface IEBDAlunoApp<TModel> : IApplication<TModel> where TModel : class
+    public interface ITurmaApp<TModel> : IApplication<TModel> where TModel : class
     {
     }
 }

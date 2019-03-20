@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Cavalheiro.Ashbel.Application.Interfaces
 {
-    public interface IEBDRegistroPresencaApp<TModel> : IApplication<TModel> where TModel : class
+    public interface IRegistroPresencaApp<TModel> : IApplication<TModel> where TModel : class
     {
     }
 }

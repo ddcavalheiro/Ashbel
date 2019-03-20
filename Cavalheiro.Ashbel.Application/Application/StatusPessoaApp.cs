@@ -9,42 +9,27 @@ namespace Cavalheiro.Ashbel.Application.Application
 {
     public class StatusPessoaApp : IStatusPessoaApp<StatusPessoaModel>
     {
-        public Task Delete(string id)
+        public Task Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task Delete(long id)
+        public Task<StatusPessoaModel> Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<StatusPessoaModel> Get(string id)
+        public Task<IEnumerable<StatusPessoaModel>> Get()
         {
             throw new NotImplementedException();
         }
 
-        public Task<StatusPessoaModel> Get(long id)
+        public Task<StatusPessoaModel> Post(StatusPessoaModel model)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<StatusPessoaModel>> List()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<StatusPessoaModel>> List(StatusPessoaModel model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<StatusPessoaModel>> ListBasic(StatusPessoaModel model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<int>> Save(StatusPessoaModel model)
+        public Task Put(StatusPessoaModel model)
         {
             throw new NotImplementedException();
         }

@@ -1,5 +1,4 @@
 ﻿using Cavalheiro.Ashbel.Model;
-using Cavalheiro.Ashbel.Persistance.Interfaces;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -12,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Cavalheiro.Ashbel.Persistance.Repository
 {
-    public class PessoaRepo : IPessoaRepo
+    public class PessoaRepo
     {
         private readonly IConfiguration _config;
 
@@ -29,11 +28,11 @@ namespace Cavalheiro.Ashbel.Persistance.Repository
             }
         }
 
-        public async Task<List<PessoaModel>> GetAll()
+        public async Task<List<PessoaModel>> Get()
         {
             using (IDbConnection conn = Connection)
             {
-                string sQuery = "SELECT ID, FirstName, LastName, DateOfBirth FROM Employee";
+                string sQuery = "SELECT * FROM PESSOA";
                 conn.Open();
                 var result = await conn.QueryAsync<PessoaModel>(sQuery);
 
@@ -41,7 +40,20 @@ namespace Cavalheiro.Ashbel.Persistance.Repository
             }
         }
 
-        public Task<PessoaModel> GetById(int id)
+        public async Task<PessoaModel> Get(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task Delete(int id)
+        {
+        }
+
+        public async Task<PessoaModel> Post(PessoaModel model)
+        {
+            throw new NotImplementedException();
+        }
+        public async Task Put(PessoaModel model)
         {
             throw new NotImplementedException();
         }

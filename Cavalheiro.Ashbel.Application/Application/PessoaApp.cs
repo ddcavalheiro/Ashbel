@@ -1,7 +1,7 @@
 ﻿using Cavalheiro.Ashbel.Application.Interfaces;
 using Cavalheiro.Ashbel.Model;
-using Cavalheiro.Ashbel.Persistance.Interfaces;
 using Cavalheiro.Ashbel.Persistance.Repository;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,50 +11,35 @@ namespace Cavalheiro.Ashbel.Application.Application
 {
     public class PessoaApp : IPessoaApp<PessoaModel>
     {
-        IPessoaRepo _pessoaRepo;
-        public PessoaApp(IPessoaRepo pessoaRepo)
+        PessoaRepo _repo;
+        public PessoaApp(IConfiguration config)
         {
-            _pessoaRepo = pessoaRepo;
+            _repo = new PessoaRepo(config);
         }
 
-        public Task Delete(long id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            await _repo.Delete(id);
         }
 
-        public Task<PessoaModel> Get(string id)
+        public async Task<PessoaModel> Get(int id)
         {
-            throw new NotImplementedException();
+            return await _repo.Get(id);
         }
 
-        public Task<PessoaModel> Get(long id)
+        public async Task<IEnumerable<PessoaModel>> Get()
         {
-            throw new NotImplementedException();
+            return await _repo.Get();
         }
 
-        public async Task<List<PessoaModel>> List()
+        public async Task<PessoaModel> Post(PessoaModel model)
         {
-            return await _pessoaRepo.GetAll();
+            return await _repo.Post(model);
         }
 
-        public Task<IEnumerable<PessoaModel>> List(PessoaModel model)
+        public async Task Put(PessoaModel model)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<PessoaModel>> ListBasic(PessoaModel model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<int>> Save(PessoaModel model)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IEnumerable<PessoaModel>> IApplication<PessoaModel>.List()
-        {
-            throw new NotImplementedException();
+            await _repo.Put(model);
         }
     }
 }

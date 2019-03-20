@@ -7,29 +7,29 @@ using System.Threading.Tasks;
 
 namespace Cavalheiro.Ashbel.Application.Application
 {
-    public class CargoApp : ICargoApp<CargoModel>
+    public class RegistroPresencaApp : IRegistroPresencaApp<RegistroPresencaModel>
     {
         public Task Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<CargoModel> Get(int id)
+        public Task<RegistroPresencaModel> Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<CargoModel>> Get()
+        public Task<IEnumerable<RegistroPresencaModel>> Get()
         {
             throw new NotImplementedException();
         }
 
-        public Task<CargoModel> Post(CargoModel model)
+        public Task<RegistroPresencaModel> Post(RegistroPresencaModel model)
         {
             throw new NotImplementedException();
         }
 
-        public Task Put(CargoModel model)
+        public Task Put(RegistroPresencaModel model)
         {
             throw new NotImplementedException();
         }

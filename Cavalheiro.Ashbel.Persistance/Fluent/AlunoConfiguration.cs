@@ -23,14 +23,14 @@ namespace Cavalheiro.Ashbel.Persistance.Fluent
             builder.Property(t => t.Matriculado).IsRequired().HasDefaultValue(true).HasColumnName("Matriculado");
 
             //relation properties
-            builder.Property(t => t.IdPessoa).IsRequired().HasDefaultValue(0).HasColumnName("IdPessoa");
+            //builder.Property(t => t.IdPessoa).IsRequired().HasDefaultValue(0).HasColumnName("IdPessoa");
             builder.Property(t => t.IdTurma).IsRequired().HasMaxLength(250).HasColumnName("IdTurma");
 
             //Relations
 
-            builder.HasOne(s => s.Pessoa)
-                    .WithOne(ad => ad.Aluno)
-                    .HasConstraintName("FK_Aluno_Pessoa");
+            //builder.HasOne(s => s.Pessoa)
+            //        .WithOne(ad => ad.Aluno)
+            //        .HasConstraintName("FK_Aluno_Pessoa");
 
             builder.HasOne(s => s.Turma)
                     .WithMany(ad => ad.Alunos)

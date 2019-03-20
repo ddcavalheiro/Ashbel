@@ -9,10 +9,12 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Swashbuckle.AspNetCore.Swagger;
 
-using Cavalheiro.Ashbel.Persistance.Interfaces;
 using Cavalheiro.Ashbel.Persistance.Repository;
 using Microsoft.EntityFrameworkCore;
 using Cavalheiro.Ashbel.Persistance;
+using Cavalheiro.Ashbel.Application.Interfaces;
+using Cavalheiro.Ashbel.Application.Application;
+using Cavalheiro.Ashbel.Model;
 
 namespace Cavalheiro.Ashbel.WebApi
 {
@@ -33,7 +35,18 @@ namespace Cavalheiro.Ashbel.WebApi
                 options.UseSqlServer(Configuration.GetConnectionString("Ashbel"));
             });
 
-            services.AddTransient<IPessoaRepo, PessoaRepo>();
+            services
+                .AddTransient<IAlunoApp<AlunoModel>, AlunoApp>()
+                .AddTransient<IAulaApp<AulaModel>, AulaApp>()
+                .AddTransient<ICargoApp<CargoModel>, CargoApp>()
+                .AddTransient<ICargoGrupoTrabalhoApp<CargoGrupoTrabalhoModel>, CargoGrupoTrabalhoApp>()
+                .AddTransient<IGrupoTrabalhoApp<GrupoTrabalhoModel>, GrupoTrabalhoApp>()
+                .AddTransient<IPessoaApp<PessoaModel>, PessoaApp>()
+                .AddTransient<IPessoaGrupoTrabalhoApp<PessoaGrupoTrabalhoModel>, PessoaGrupoTrabalhoApp>()
+                .AddTransient<IRegistroPresencaApp<RegistroPresencaModel>, RegistroPresencaApp>()
+                .AddTransient<IStatusPessoaApp<StatusPessoaModel>, StatusPessoaApp>()
+                .AddTransient<ITipoGrupoTrabalhoApp<TipoGrupoTrabalhoModel>, TipoGrupoTrabalhoApp>()
+                .AddTransient<ITurmaApp<TurmaModel>, TurmaApp>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 

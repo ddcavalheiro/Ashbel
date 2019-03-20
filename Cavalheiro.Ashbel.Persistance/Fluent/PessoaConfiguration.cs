@@ -45,7 +45,6 @@ namespace Cavalheiro.Ashbel.Persistance.Fluent
                 .HasForeignKey(s => s.IdStatusPessoa)
                 .HasConstraintName("FK_Pessoa_StatusPessoa");
 
-
         }
     }
 }
